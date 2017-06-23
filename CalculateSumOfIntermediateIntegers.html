@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>计算俩数之间整数和</title>
+    <link href="main.css" rel="stylesheet">
+    <style>
+        input{width: 300px;}
+        *{margin: 0;padding:0;}
+        body{text-align:center;}
+        .juzhong{margin: 0 auto;border:1px solid #fff;}
+    </style>
+    <script src="https://cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
+</head>
+<script>
+    $(document).ready(function(){
+        $(".button").click(function(){
+            var a=$("#number1");
+            var b=$("#number2");
+            var s=0;
+            if(parseInt(a.val())<=parseInt(b.val())){
+                for(i=Math.ceil(a.val());i<=Math.floor(b.val());i++){
+                    s=s+i;
+                }
+            }
+            else{
+                for(i=Math.ceil(b.val());i<=Math.floor(a.val());i++){
+                    s=s+i;
+                }
+            }
+            $("#number3").val(s);
+        });
+    });
+</script>
+<body>
+    <div class="juzhong">
+        <input type="text" id="number1">
+        <br>
+        <input type="text" id="number2">
+        <br>
+        <input type="button" class="button" value="计算俩数之间整数和">
+        <br>
+        <input type="text" id="number3">
+    </div>
+
+</body>
+</html>
